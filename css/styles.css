@@ -470,11 +470,11 @@ img {
 .main-block {
   display: flex;
   align-items: baseline;
-  gap: 70px;
 }
 
 .footer-block {
   min-width: 231px;
+  margin-right: 70px;
 }
 
 .adress-style {
@@ -538,6 +538,7 @@ img {
 .join {
   display: flex;
   flex-direction: column;
+  margin-right: 93px;
 }
 
 .join-title,
@@ -579,11 +580,66 @@ img {
 } */
 
 .mailing-box {
-  display: flex;
+  width: 570px;
 }
 
-.mailing-label {
-  visibility: hidden;
+.mailing-list {
+  position: relative;
+  display: flex;
+} 
+
+.mailing-form {
+  width: 358px;
+  height: 50px;
+  padding: 15px 16px;
+  margin-right: 12px;
+
+  background-color: rgba(33, 150, 243, 0);
+  border-radius: 4px;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mailing-form input::placeholder {
+  font-size: 16px;
+  line-height: 1.07;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.button-sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+  width: 200px;
+  height: 50px;
+
+  border: none;
+  border-radius: 4px;
+  background: var(--accent-color);
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  color: var(--primery-white-color);
+  fill: currentColor;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-sign-up:hover,
+.button-sign-up:focus {
+  color: var(--primery-black-color);
+  background-color: var(--background-white-color);
+
+}
+
+.button-sign-text {
+  margin-right: 10px;
 }
 
 /* portfolio */
@@ -769,11 +825,20 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   border-radius: 50%;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-modal {
+.icon-close {
   width: 100%;
   height: 100%;
+}
+
+.button-close:hover,
+.button-close:focus {
+  fill: var(--accent-color);
 }
 
 .form-modal {
@@ -820,6 +885,10 @@ img {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input {
@@ -827,6 +896,7 @@ img {
   margin-left: 12px;
   padding: 0;
   border: 0;
+  outline: none;
 }
 
 .wrapper-form-textarea {
@@ -838,6 +908,17 @@ img {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-icon {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .textarea-input {
@@ -846,21 +927,48 @@ img {
   min-height: 96px;
   border: 0;
   padding: 0;
+  outline: none;
+}
+
+
+.textarea-input input::placeholder {
+ font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.01;
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .checkbox-field {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
 .form-policy {
-  margin-left: 8.38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 1)
+
+}
+
+.modal-checkbox:checked + .modal-check {
+background-image: background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E%0A");
+}
+
+.policy-text {
+  padding-left: 7px;
   line-height: 1.71;
 
-  color: #757575;
+  color: var(--primery-text-color);
 }
 
 .policy-link {
@@ -870,7 +978,7 @@ img {
   line-height: 1.71;
 
   text-decoration-line: underline;
-  color: #2196f3;
+  color: var(--accent-color);
 }
 
 .modal-button {
@@ -897,3 +1005,14 @@ img {
 
   color: var(--primery-white-color);
 }
+
+.wrapper-form-input:hover,
+.wrapper-form-input:focus,
+.wrapper-form-textarea:hover,
+.wrapper-form-textarea:focus,
+.modal-icon:hover,
+.modal-icon:focus {
+  border: 1px solid var(--accent-color);
+  fill: var(--accent-color);
+}
+
