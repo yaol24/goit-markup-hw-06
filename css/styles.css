@@ -846,7 +846,7 @@ img {
   margin-top: 2px;
   margin-right: auto;
   margin-left: auto;
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
 }
 
 .modal-text {
@@ -949,7 +949,7 @@ img {
 .form-policy {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;outline: ;
 }
 
 .modal-checkbox {
