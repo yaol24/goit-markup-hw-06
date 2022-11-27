@@ -594,7 +594,6 @@ img {
   padding: 15px 16px;
   margin-right: 12px;
 
-  background-color: rgba(33, 150, 243, 0);
   border-radius: 4px;
   border-color: rgba(255, 255, 255, 0.3);
 }
@@ -805,8 +804,7 @@ img {
   left: 50%;
 
   min-width: 528px;
-  min-height: 581px;
-  padding: 8px;
+  padding: 40px;
   text-align: end;
 
   background-color: #ffffff;
@@ -819,6 +817,9 @@ img {
 }
 
 .button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   width: 30px;
   height: 30px;
   background: #ffffff;
@@ -842,8 +843,6 @@ img {
 }
 
 .form-modal {
-  width: 448px;
-  margin-top: 2px;
   margin-right: auto;
   margin-left: auto;
   /* outline: 1px solid tomato; */
@@ -867,6 +866,10 @@ img {
   margin-bottom: 10px;
 }
 
+.form-field:last-child {
+  margin-bottom: 0;
+}
+
 .form-label {
   margin-bottom: 4px;
   font-size: 12px;
@@ -877,12 +880,18 @@ img {
 }
 
 .wrapper-form-input {
-  display: flex;
+  position: relative;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 10px 11px;
-  height: 40px;
+  align-items: center; */
+}
 
+.form-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  
+  padding: 11px 12px 11px 42px; 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
@@ -891,20 +900,27 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input {
-  width: 100%;
-  margin-left: 12px;
-  padding: 0;
-  border: 0;
-  outline: none;
+.modal-icon {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  fill: var(--primery-black-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .wrapper-form-textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 11px 15px;
+}
+
+.textarea-input {
+  resize: none;
+  width: 100%;
   min-height: 120px;
+  padding: 11px 15px; 
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -915,24 +931,9 @@ img {
 
 }
 
-.modal-icon {
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.textarea-input {
-  resize: vertical;
-  width: 416px;
-  min-height: 96px;
-  border: 0;
-  padding: 0;
-  outline: none;
-}
-
 
 .textarea-input input::placeholder {
- font-size: 12px;
+  font-size: 12px;
   line-height: 14px;
   letter-spacing: 1.01;
   color: rgba(117, 117, 117, 0.5);
@@ -953,15 +954,25 @@ img {
 }
 
 .modal-checkbox {
+  appearance: none;
+}
+
+.modal-check {
   display: inline-block;
   width: 16px;
   height: 15px;
-  border: 1px solid rgba(0, 0, 0, 1)
+  border: 2px solid var(--primery-black-color);
+  border-radius: 2px;
 
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .modal-checkbox:checked + .modal-check {
-background-image: background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E%0A");
+ background-color: var(--accent-color); 
+ border: 2px solid var(--accent-color);
+ background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='15' rx='2' fill='%232196F3'/%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E%0A");
+ background-origin: border-box;
 }
 
 .policy-text {
@@ -985,7 +996,6 @@ background-image: background-image: url("data:image/svg+xml,%3Csvg width='13' he
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 32px;
   padding: 0;
   width: 200px;
   height: 50px;
@@ -1006,13 +1016,12 @@ background-image: background-image: url("data:image/svg+xml,%3Csvg width='13' he
   color: var(--primery-white-color);
 }
 
-.wrapper-form-input:hover,
-.wrapper-form-input:focus,
-.wrapper-form-textarea:hover,
-.wrapper-form-textarea:focus,
-.modal-icon:hover,
-.modal-icon:focus {
+.form-input:focus,
+.textarea-input:focus {
+  outline: none; 
   border: 1px solid var(--accent-color);
-  fill: var(--accent-color);
 }
 
+.form-input:focus + .modal-icon {
+  fill: var(--accent-color);
+}
