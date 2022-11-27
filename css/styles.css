@@ -74,7 +74,7 @@ img {
   overflow: hidden;
   border: 0;
   padding: 0;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   margin: -1px;
 }
@@ -645,7 +645,7 @@ img {
 .portfolio-title {
   font-size: 18px;
   line-height: 2;
-  letter-spacing: 0.06em-;
+  letter-spacing: 0.06em;
 }
 
 .button-list {
@@ -881,9 +881,9 @@ img {
 
 .wrapper-form-input {
   position: relative;
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 }
 
 .form-input {
@@ -935,7 +935,7 @@ img {
 .textarea-input input::placeholder {
   font-size: 12px;
   line-height: 14px;
-  letter-spacing: 1.01;
+  letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
@@ -950,7 +950,8 @@ img {
 .form-policy {
   display: flex;
   justify-content: center;
-  align-items: center;outline: ;
+  align-items: center;
+  margin: 0;
 }
 
 .modal-checkbox {
@@ -958,7 +959,7 @@ img {
 }
 
 .modal-check {
-  display: inline-block;
+  display: block;
   width: 16px;
   height: 15px;
   border: 2px solid var(--primery-black-color);
